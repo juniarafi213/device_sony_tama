@@ -19,12 +19,9 @@ $(call inherit-product, frameworks/native/build/phone-xhdpi-4096-dalvik-heap.mk)
 
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
-    $(LOCAL_PATH)/overlay \
-    $(LOCAL_PATH)/overlay-lineage
+    $(LOCAL_PATH)/overlay
 
 PRODUCT_ENFORCE_RRO_TARGETS := *
-PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += \
-    $(LOCAL_PATH)/overlay-lineage/lineage-sdk
 
 # A/B
 AB_OTA_UPDATER := true
@@ -239,9 +236,9 @@ PRODUCT_PACKAGES += \
     ipacm \
     IPACM_cfg.xml
 
-# LiveDisplay
-PRODUCT_PACKAGES += \
-    vendor.lineage.livedisplay@2.0-service-sdm
+# LiveDisplay (Lineage-only)
+# PRODUCT_PACKAGES += \
+#     vendor.lineage.livedisplay@2.0-service-sdm
 
 # Lights
 PRODUCT_PACKAGES += \
@@ -356,9 +353,9 @@ PRODUCT_PACKAGES += \
     android.hardware.thermal@1.0-service \
     thermal.sdm845
 
-# Trust HAL
-PRODUCT_PACKAGES += \
-    vendor.lineage.trust@1.0-service
+# Trust HAL (Lineage-only)
+# PRODUCT_PACKAGES += \
+#     vendor.lineage.trust@1.0-service
 
 # USB
 PRODUCT_PACKAGES += \
